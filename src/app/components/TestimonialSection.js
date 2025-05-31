@@ -1,4 +1,7 @@
+'use client';
+
 import { motion } from 'framer-motion';
+import Image from 'next/image'; // ✅ Import next/image
 
 export default function TestimonialSection() {
   const testimonials = [
@@ -78,9 +81,11 @@ export default function TestimonialSection() {
             >
               <p className="text-sm text-gray-300 mb-5">{testimonial.quote}</p>
               <div className="flex items-center gap-3 sm:gap-4">
-                <img
+                <Image
                   src={testimonial.image}
                   alt={testimonial.name}
+                  height={48}
+                  width={48}
                   className="h-10 w-10 sm:h-12 sm:w-12 rounded-full object-cover"
                 />
                 <div className="text-left">

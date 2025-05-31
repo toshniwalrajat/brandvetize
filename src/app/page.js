@@ -1,9 +1,11 @@
+// page.js
+
 'use client';
 
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import Image from 'next/image'; // ✅ Updated import
+import Image from 'next/image';
 
 import CardsSection from './components/CardsSection';
 import WebsiteNeedsSection from './components/WebsiteNeedsSection';
@@ -35,7 +37,6 @@ export default function Home() {
 
   return (
     <main className="relative min-h-screen text-white overflow-hidden bg-black">
-      {/* Stars Background */}
       <div
         className="absolute inset-0 bg-[url('/stars.png')] bg-repeat opacity-20 animate-stars z-0"
         style={{
@@ -45,7 +46,6 @@ export default function Home() {
       />
       <div className="absolute inset-0 bg-gradient-to-b from-[#100022] via-black to-black z-10 pointer-events-none" />
 
-      {/* HEADER */}
       <header
         className={`fixed top-0 left-0 w-full z-30 transition-all duration-300 ${
           scrolled
@@ -116,7 +116,6 @@ export default function Home() {
         </AnimatePresence>
       </header>
 
-      {/* HERO Section */}
       <section className="relative z-20 text-center py-28 px-4">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
@@ -128,7 +127,7 @@ export default function Home() {
           </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4">
-            We Don&apos;t Just Build Websites
+            We Don't Just Build Websites
             <br className="hidden sm:block" />
             We Build Market Leaders.
           </h1>
@@ -145,7 +144,6 @@ export default function Home() {
             Book a 15 min call ↗
           </a>
 
-          {/* Logos Marquee */}
           <div className="relative z-20 py-10 overflow-hidden">
             <div className="w-full whitespace-nowrap overflow-hidden">
               <div
@@ -168,7 +166,6 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* Sections */}
       <section id="benefits" className="relative z-20">
         <CardsSection />
       </section>
@@ -193,7 +190,6 @@ export default function Home() {
         <FAQSection />
       </section>
 
-      {/* Floating CTA */}
       <a
         href="#book-call"
         className="fixed bottom-6 right-6 z-50 px-4 py-2 bg-[#6C3BFF] hover:bg-[#7c50ff] text-white rounded-lg text-sm font-semibold shadow-lg transition"
@@ -201,7 +197,6 @@ export default function Home() {
         Book a call ↗
       </a>
 
-      {/* Footer */}
       <Footer />
     </main>
   );
