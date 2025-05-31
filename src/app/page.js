@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image'; // ✅ Updated import
 
 import CardsSection from './components/CardsSection';
 import WebsiteNeedsSection from './components/WebsiteNeedsSection';
@@ -127,7 +128,7 @@ export default function Home() {
           </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4">
-            We Don’t Just Build Websites
+            We Don&apos;t Just Build Websites
             <br className="hidden sm:block" />
             We Build Market Leaders.
           </h1>
@@ -152,10 +153,12 @@ export default function Home() {
                 style={{ animationDuration: '25s' }}
               >
                 {[...logos, ...logos].map((logo, i) => (
-                  <img
+                  <Image
                     key={i}
                     src={logo}
                     alt={`logo-${i}`}
+                    height={24}
+                    width={100}
                     className="h-6 w-auto object-contain grayscale hover:grayscale-0 transition duration-300 ease-in-out"
                   />
                 ))}
